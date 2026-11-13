@@ -4,14 +4,14 @@ ech() { echo "### $1 ###"; }
 ech2() { echo "- $1"; }
 tch() { [ -f "$1" ] || :> "$1"; }
 mkd() { [ -d "$1" ] || mkdir -p "$1"; }
-ins() { for p in $@; do $(xbps-query $p > /dev/null) || { ech2 "installing $p" && xi -y $p; }; done }
+ins() { for p in "$@"; do xbps-query "$p" > /dev/null || { ech2 "installing $p" && xi -y "$p"; }; done }
 
 ech "START"
 
 if [ ! -f init-done ]; then
   ech "WIFI SETUP"
   sh -c "wpa_passphrase tilde $1 >> /etc/wpa_supplicant/wpa_supplicant.conf"
-  wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i wlp2s0 & > /dev/null
+  wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i wlp2s0 > /dev/null &
 fi
 
 ech "SYSTEM UPDATE"
@@ -62,13 +62,13 @@ pushd river-classic
 git checkout ea4774c6
 zig build -Doptimize=ReleaseSafe -Dxwayland --prefix /home/omega/.local install
 popd
-echo '#!/usr/bin/env bash
+echo "#!/bin/sh
 
 riverctl keyboard-layout ch
 riverctl map normal Mod4 Return spawn 'kitty'
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
-' > /home/omega/.config/river/init
+" > /home/omega/.config/river/init
 
 ech "PIPEWIRE"
 # TODO: finish
