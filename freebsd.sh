@@ -5,49 +5,76 @@ ech2() { echo "- $1"; }
 tch() { [ -f "$1" ] || :> "$1"; }
 mkd() { [ -d "$1" ] || mkdir -p "$1"; }
 ins() { for p in "$@"; do pkg search "$p" > /dev/null || { ech2 "installing $p" && pkg install -y "$p"; }; done }
+# TODO: template vars
+tpl() { mkd "$(dirname "$2")" && cp "$1" "$2"; }
 
 ech "START"
 
 ech "KEYBOARD LAYOUT"
 sysrc keymap="ch.kbd"
 
-ech "TIMEZONE"
-cp -v /usr/share/zoneinfo/Europe/Zurich /etc/localtime
-adjkerntz -a
+if [ ! -e /etc/localtime ]; then
+  ech "TIMEZONE"
+  cp -v /usr/share/zoneinfo/Europe/Zurich /etc/localtime
+  adjkerntz -a
+fi
 
-ech "USER"
-adduser omega -G'wheel video' -d/home/omega -wyes -ssh -q
+id omega > /dev/null || { ech "USER" && adduser omega -G'wheel video' -d/home/omega -wyes -ssh -q; }
 
 ech "UPDATE"
 pkg update
+sysrc linux_enable="YES"
+service linux start
 
 ech "APPS"
-ins git curl neovim ffmpeg kitty
+ins git curl neovim \
+  swaylock flameshot rofi pass \
+  discord \
+  drawio libreoffice xournalpp zathura \
+  qutebrowser firefox chromium \
+  wshowkeys woomer
 
 ech "DOAS"
 ins doas
 echo 'permit setenv {PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin} :wheel' > /etc/doas.conf
 
 ech "WAYLAND"
-ins wayland xwayland seatd dunst ly river-classic
+ins wayland xwayland seatd river-classic ly dunst kitty 7z
 sysrc seatd_enable="YES"
 service seatd start
 
+grep Ly /etc/gettytab ||
+  echo "Ly:\
+    :lo=/usr/local/bin/ly:\
+    :al=root:" >> /etc/gettytab
+
+# TODO: simpler sed
+grep Ly /etc/ttys ||
+  sed -i 's@ttyv1.*@ttyv1 "/usr/libexec/getty Ly" xterm onifexists secure@' /etc/ttys 
+
+# TODO: gpu
+# sysrc kld_list+="i915kms"
+
+ech "RIVER"
 mkd /home/omega/.config/river
 echo "#!/bin/sh
 
 riverctl keyboard-layout ch
-riverctl map normal Mod4 Return spawn 'kitty'
+riverctl map normal Super Return spawn foot
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
+riverctl map normal Super Q close
+riverctl map normal Super+Shift Q exit
 " > /home/omega/.config/river/init
 
-echo "Ly:\
-  :lo=/usr/local/bin/ly:\
-  :al=root:" >> /etc/gettytab
-
-# TODO: /etc/ttys
-sed -i 's@ttyv1.*@ttyv1 "/usr/libexec/getty Ly" xterm onifexists secure@' /etc/ttys 
+if [ ! -f /home/omega/.local/share/fonts/JetBrainsMonoNLNerdFont-Regular.ttf ]; then
+  ech "FONTS"
+  curl -sSLO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip
+  mkd /home/omega/.local/share/fonts
+  unzip JetBrainsMono.zip -d /home/omega/.local/share/fonts
+  fc-cache -f
+  rm JetBrainsMono.zip
+fi
 
 ech "CLEANUP"
 chown -R omega:omega /home/omega/

@@ -65,9 +65,11 @@ popd
 echo "#!/bin/sh
 
 riverctl keyboard-layout ch
-riverctl map normal Mod4 Return spawn 'kitty'
+riverctl map normal Super Return spawn kitty
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
+riverctl map normal Super Q close
+riverctl map normal Super+Shift Q exit
 " > /home/omega/.config/river/init
 
 ech "PIPEWIRE"

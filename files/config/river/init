@@ -1,0 +1,240 @@
+riverctl background-color 0x1e1e2e
+riverctl border-color-focused 0x89b4fa
+riverctl border-color-unfocused 0x45475a
+riverctl border-color-urgent 0xf38ba8
+riverctl border-width 2
+riverctl declare-mode music
+riverctl declare-mode open
+riverctl declare-mode run
+riverctl declare-mode system
+riverctl declare-mode bookmark
+riverctl declare-mode keyboard
+riverctl declare-mode rebuild
+riverctl declare-mode screen
+riverctl declare-mode passthrough
+riverctl default-layout rivertile
+riverctl hide-cursor timeout 1000
+riverctl hide-cursor when-typing enabled
+riverctl input '*' accel-profile flat
+riverctl input '*' click-method button-areas
+riverctl input '*' scroll-method two-finger
+riverctl input '*' tap enabled
+riverctl keyboard-layout ch
+riverctl map bookmark None Escape enter-mode normal
+riverctl map bookmark None a spawn 'riverctl enter-mode normal && rofi_bookmarks'
+riverctl map bookmark None c spawn 'riverctl enter-mode normal && rofi_bookmarks clip'
+riverctl map bookmark None i spawn 'riverctl enter-mode normal && rofi_bookmarks insert'
+riverctl map bookmark None o spawn 'riverctl enter-mode normal && rofi_bookmarks open'
+riverctl map keyboard None Escape enter-mode normal
+riverctl map keyboard None c spawn 'riverctl enter-mode normal && fcitx5-remote -g Chinese'
+riverctl map keyboard None e spawn 'riverctl enter-mode normal && fcitx5-remote -g English'
+riverctl map keyboard None j spawn 'riverctl enter-mode normal && fcitx5-remote -g Japanese'
+riverctl map keyboard None r spawn 'riverctl enter-mode normal && fcitx5-remote -g Russian'
+riverctl map keyboard None s spawn 'riverctl enter-mode normal && fcitx5-remote -g Swiss'
+riverctl map music None Escape enter-mode normal
+riverctl map music None a spawn 'playerctl loop Playlist'
+riverctl map music None d spawn 'volume_control lower'
+riverctl map music None h spawn 'playerctl position 5-'
+riverctl map music None i spawn 'volume_control raise'
+riverctl map music None j spawn 'playerctl previous'
+riverctl map music None k spawn 'playerctl next'
+riverctl map music None l spawn 'playerctl position 5+'
+riverctl map music None m spawn 'riverctl enter-mode normal && rofi-mpd'
+riverctl map music None n spawn 'playerctl loop None'
+riverctl map music None p spawn 'playerctl play-pause'
+riverctl map music None q spawn 'playerctl stop'
+riverctl map music None r enter-mode 'pulseaudio'
+riverctl map music None s spawn 'playerctl shuffle Toggle'
+riverctl map music None t spawn 'playerctl loop Track'
+riverctl map music None x spawn 'volume_control mute'
+riverctl map normal Alt v spawn 'CM_LAUNCHER=rofi clipmenu -location 1 -m -3 -no-show-icons -theme-str "* \{ font: 10px; \}" -theme-str "listview \{ spacing: 0; \}" -theme-str "window \{ width: 20em; \}"'
+riverctl map normal Mod4 Return spawn 'kitty'
+riverctl map normal Mod4 m enter-mode 'music'
+riverctl map normal Mod4 o enter-mode 'open'
+riverctl map normal Mod4 r enter-mode 'run'
+riverctl map normal Mod4 s enter-mode 'system'
+riverctl map normal Mod4 x spawn 'exec swaylock -fF'
+riverctl map normal Mod4+Alt+Shift k spawn 'pkill -f wshowkeys'
+riverctl map normal Mod4+Alt+Shift s spawn 'flameshot full'
+riverctl map normal Mod4+Ctrl h spawn 'sxhkd_helper'
+riverctl map normal Mod4+Ctrl+Shift s spawn 'flameshot screen'
+riverctl map normal Mod4+Shift k spawn 'wshowkeys -a top -b '\''#1e1e2e99'\'' -f '\''#cdd6f499'\'' -s '\''#cdd6f499'\'' -F '\''JetBrainsMono Nerd Font Mono 36'\'' &'
+riverctl map normal Mod4+Shift s spawn 'flameshot & disown && flameshot gui'
+riverctl map normal Mod4+Shift z spawn 'woomer'
+riverctl map normal None XF86AudioLowerVolume spawn 'volume_control lower'
+riverctl map normal None XF86AudioMute spawn 'volume_control mute'
+riverctl map normal None XF86AudioRaiseVolume spawn 'volume_control raise'
+riverctl map normal None XF86Display spawn 'screens_control'
+riverctl map normal None XF86MonBrightnessDown spawn 'brightness_control lower'
+riverctl map normal None XF86MonBrightnessUp spawn 'brightness_control raise'
+riverctl map normal None XF86PowerOff spawn 'exec swaylock -fF'
+riverctl map normal Super Comma focus-output previous
+riverctl map normal Super D send-layout-cmd rivertile "main-count -1"
+riverctl map normal Super Down send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Super F toggle-fullscreen
+riverctl map normal Super F11 enter-mode passthrough
+riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super I send-layout-cmd rivertile "main-count +1"
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal Super Left send-layout-cmd rivertile "main-location left"
+riverctl map normal Super Period focus-output next
+riverctl map normal Super Q close
+riverctl map normal Super Return spawn kitty
+riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Super Space toggle-float
+riverctl map normal Super Up send-layout-cmd rivertile "main-location top"
+riverctl map normal Super+Alt H move left 100
+riverctl map normal Super+Alt J move down 100
+riverctl map normal Super+Alt K move up 100
+riverctl map normal Super+Alt L move right 100
+riverctl map normal Super+Alt+Control H snap left
+riverctl map normal Super+Alt+Control K snap up
+riverctl map normal Super+Alt+Control L snap right
+riverctl map normal Super+Alt+Shift H resize horizontal -100
+riverctl map normal Super+Alt+Shift J resize vertical 100
+riverctl map normal Super+Alt+Shift K resize vertical -100
+riverctl map normal Super+Alt+Shift L resize horizontal 100
+riverctl map normal Super+Shift Comma send-to-output previous
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Q exit
+riverctl map normal Super+Shift Return zoom
+riverctl map normal puper+Alt+Control J snap down
+riverctl map open None Escape enter-mode normal
+riverctl map open None b spawn 'riverctl enter-mode normal && qutebrowser'
+riverctl map open None c spawn 'riverctl enter-mode normal && code'
+riverctl map open None d spawn 'riverctl enter-mode normal && discord'
+riverctl map open None e spawn 'riverctl enter-mode normal && kitty -e aerc'
+riverctl map open None f spawn 'riverctl enter-mode normal && firefox'
+riverctl map open None g spawn 'riverctl enter-mode normal && hyprpicker'
+riverctl map open None h spawn 'riverctl enter-mode normal && homebank'
+riverctl map open None i spawn 'riverctl enter-mode normal && drawio'
+riverctl map open None k spawn 'riverctl enter-mode normal && wshowkeys -a top -b '\''#1e1e2e99'\'' -f '\''#cdd6f499'\'' -s '\''#cdd6f499'\'' -F '\''JetBrainsMono Nerd Font Mono 36'\'' &'
+riverctl map open None l spawn 'riverctl enter-mode normal && libreoffice'
+riverctl map open None m spawn 'riverctl enter-mode normal && minecraft-launcher'
+riverctl map open None n spawn 'riverctl enter-mode normal && kitty -e ncmpcpp'
+riverctl map open None o spawn 'riverctl enter-mode normal && obsidian'
+riverctl map open None p spawn 'riverctl enter-mode normal && xournalpp'
+riverctl map open None q spawn 'riverctl enter-mode normal && qutebrowser'
+riverctl map open None r spawn 'riverctl enter-mode normal && rofi -m -4 -show drun'
+riverctl map open None s spawn 'riverctl enter-mode normal && spotify'
+riverctl map open None v spawn 'riverctl enter-mode normal && kitty -e nvim'
+riverctl map open None x spawn 'riverctl enter-mode normal && kitty -e lf'
+riverctl map open None y spawn 'riverctl enter-mode normal && zathura'
+riverctl map passthrough Super F11 enter-mode normal
+riverctl map rebuild None Escape enter-mode normal
+riverctl map run None Escape enter-mode normal
+riverctl map run None b enter-mode 'bookmark'
+riverctl map run None c spawn 'riverctl enter-mode normal && rofi-calc-hack'
+riverctl map run None e spawn 'riverctl enter-mode normal && rofi -m -4 -show emoji'
+riverctl map run None f spawn 'riverctl enter-mode normal && rofi -m -4 -show file-browser-extended'
+riverctl map run None k spawn 'riverctl enter-mode normal && kaomoji'
+riverctl map run None q spawn 'riverctl enter-mode normal && rofi_kill'
+riverctl map run None r spawn 'riverctl enter-mode normal && rofi_cmd'
+riverctl map run None s spawn 'riverctl enter-mode normal && rofi-screenshot'
+riverctl map run None t spawn 'riverctl enter-mode normal && rofi_timer'
+riverctl map run None w spawn 'riverctl enter-mode normal && rofi -m -4 -show window'
+riverctl map run None y spawn 'riverctl enter-mode normal && passmenu'
+riverctl map run None z spawn 'riverctl enter-mode normal && woomer'
+riverctl map screen None Escape enter-mode normal
+riverctl map screen None d spawn 'brightness_control lower'
+riverctl map screen None i spawn 'brightness_control raise'
+riverctl map screen None r spawn 'screens_control'
+riverctl map system None Escape enter-mode normal
+riverctl map system None b spawn 'riverctl enter-mode normal && rofi-bluetooth'
+riverctl map system None d spawn 'riverctl enter-mode normal && rofi-systemd'
+riverctl map system None h spawn 'riverctl enter-mode normal && rofi -m -4 -show ssh'
+riverctl map system None k enter-mode 'keyboard'
+riverctl map system None n spawn 'riverctl enter-mode normal && networkmanager_dmenu'
+riverctl map system None r enter-mode 'rebuild'
+riverctl map system None s enter-mode 'screen'
+riverctl map system None t spawn 'riverctl enter-mode normal && rofi -m -4 -show top -modi top'
+riverctl map system None v spawn 'riverctl enter-mode normal && rofi-vpn'
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-switch normal lid close exec swaylock -fF
+riverctl rule-add -app-id 'chromium-browser' ssd
+riverctl rule-add -app-id 'com.github.xournalpp.xournalpp' ssd
+riverctl rule-add -app-id 'firefox' ssd
+riverctl rule-add -app-id 'gimp' ssd
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' ssd
+riverctl rule-add -app-id 'org.pwmt.zathura' ssd
+riverctl set-cursor-warp on-output-change
+riverctl set-repeat 50 300
+# TODO: 
+# riverctl spawn 'swaybg --image /nix/store/pqsds4v6y16rk6rmyz9i6kan47sln5cz-7th_prince.jpg --mode fill'
+riverctl spawn 'nm-applet &'
+riverctl spawn 'kitty -e tmux a'
+riverctl spawn 'wl-clip-persist --clipboard regular --reconnect-tries 0 &'
+riverctl spawn 'wl-paste --type text --watch cliphist store &'
+riverctl spawn /home/omega/.config/river/bar
+# TODO: 
+# riverctl spawn /nix/store/j03migzkcs2lfa8mra54304z0iq31dq8-river-status
+riverctl xcursor-theme Bibata-Modern-Ice 32
+
+### EXTRA CONFIGURATION ###
+#!/bin/sh
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # Super+[1-9] to focus tag [0-8]
+    riverctl map normal Super $i set-focused-tags $tags
+
+    # Super+Shift+[1-9] to tag focused view with tag [0-8]
+    riverctl map normal Super+Shift $i set-view-tags $tags
+
+    # Super+Control+[1-9] to toggle focus of tag [0-8]
+    riverctl map normal Super+Control $i toggle-focused-tags $tags
+
+    # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
+    riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+done
+
+# Super+0 to focus all tags
+# Super+Shift+0 to tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
+rivertile -view-padding 6 -outer-padding 6 &
+
+# The scratchpad will live on an unused tag. Which tags are used depends on your
+# config, but rivers default uses the first 9 tags.
+scratch_tag=$((1 << 10))
+
+# Toggle the scratchpad with Super+P
+riverctl map normal Super P toggle-focused-tags ${scratch_tag}
+
+# Send windows to the scratchpad with Super+Shift+P
+riverctl map normal Super+Shift P set-view-tags ${scratch_tag}
+
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+# Sticky
+sticky_tag=$((1 << 11))
+all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
+
+riverctl map normal Super T toggle-view-tags $sticky_tag
+riverctl spawn-tagmask ${all_but_sticky_tag}
+
+# modify the normal keybind to always select the sticky tag
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+    # Super+[1-9] to focus tag [0-8]
+    riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
+done
+
+
+### SYSTEMD INTEGRATION ###
+# TODO: 
+# /nix/store/zjslpcn77sh4qwm0jwv5xil8jwacckdi-dbus-1.16.2/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP NIXOS_OZONE_WL XCURSOR_THEME XCURSOR_SIZE && systemctl --user stop river-session.target && systemctl --user start river-session.target

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+FIFO="$XDG_RUNTIME_DIR/sandbar"
+[ -e "$FIFO" ] && rm -f "$FIFO"
+mkfifo "$FIFO"
+
+while cat "$FIFO"; do :; done | sandbar \
+	-font "JetBrainsMono Nerd Font Mono:size=12" \
+  -no-title \
+  -no-layout \
+  -hide-normal-mode \
+  -vertical-padding 1 \
+	-active-fg-color "#b4befe" \
+	-active-bg-color "#313244" \
+	-inactive-fg-color "#f5e0dc" \
+	-inactive-bg-color "#181825" \
+	-urgent-fg-color "#1e1e2e" \
+	-urgent-bg-color "#cba6f7" \
+	-title-fg-color "#cdd6f4" \
+	-title-bg-color "#1e1e2e"
