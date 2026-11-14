@@ -1,0 +1,132 @@
+[advice]
+	addEmptyPathspec = false
+	pushNonFastForward = false
+	statusHints = false
+
+[alias]
+	a = "add"
+	alias = "config --get-regexp ^alias"
+	b = "branch"
+	ci = "commit -m"
+	co = "checkout"
+	d = "diff"
+	f = "fetch"
+	l = "log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
+	m = "merge"
+	p = "pull"
+	pf = "push --force-with-lease"
+	ps = "push"
+	s = "status"
+	sl = "stash list"
+	sp = "stash pop"
+	sps = "stash push ."
+	ss = "submodule status"
+	su = "submodule update --init --merge --recursive --remote"
+
+[apply]
+	whitespace = "error"
+
+[branch]
+	sort = "-committerdate"
+
+[core]
+	compression = 9
+	preloadindex = true
+	whitespace = "blank-at-eof,blank-at-eol,space-before-tab,trailing-space,tabwidth=2"
+
+[credential]
+	helper = "libsecret"
+
+[delta]
+
+[init]
+	defaultBranch = "main"
+
+# TODO:
+# [interactive]
+# 	diffFilter = "/nix/store/xz9cgjx837n0g8fww73n2l1x3f1ifgjz-delta-0.19.2/bin/delta --color-only"
+
+[log]
+	abbrevCommit = true
+	graphColors = "blue,yellow,cyan,magenta,green,red"
+
+# TODO:
+# [pager]
+# 	blame = "/nix/store/xz9cgjx837n0g8fww73n2l1x3f1ifgjz-delta-0.19.2/bin/delta"
+# 	branch = false
+# 	diff = "/nix/store/xz9cgjx837n0g8fww73n2l1x3f1ifgjz-delta-0.19.2/bin/delta"
+# 	log = "/nix/store/xz9cgjx837n0g8fww73n2l1x3f1ifgjz-delta-0.19.2/bin/delta"
+# 	show = "/nix/store/xz9cgjx837n0g8fww73n2l1x3f1ifgjz-delta-0.19.2/bin/delta"
+# 	tag = false
+
+[pull]
+	default = "current"
+
+[push]
+	autoSetupRemote = true
+	default = "current"
+	followTags = true
+
+[rebase]
+	missingCommitsCheck = "warn"
+
+[safe]
+	directory = "*"
+
+[sendemail "omega"]
+	from = "Georgiy Chirokikh Shevoroshkin <gshevoroshkin@gmail.com>"
+	smtpEncryption = "ssl"
+	smtpServer = "smtp.gmail.com"
+	smtpServerPort = 465
+	smtpSslCertPath = "/etc/ssl/certs/ca-certificates.crt"
+	smtpUser = "gshevoroshkin@gmail.com"
+
+[sendemail "open_ost"]
+	from = "Georgiy Chirokikh Shevoroshkin <info@open-ost.ch>"
+	smtpEncryption = "ssl"
+	smtpServer = "asmtp.mail.hostpoint.ch"
+	smtpServerPort = 465
+	smtpSslCertPath = "/etc/ssl/certs/ca-certificates.crt"
+	smtpUser = "info@open-ost.ch"
+
+[sendemail "oss_meetup"]
+	from = "OSS Meetup Rapperswil <oss_meetup@disroot.org>"
+	smtpEncryption = "ssl"
+	smtpServer = "disroot.org"
+	smtpServerPort = 465
+	smtpSslCertPath = "/etc/ssl/certs/ca-certificates.crt"
+	smtpUser = "oss_meetup"
+
+[sendemail "school"]
+	from = "Georgiy Chirokikh Shevoroshkin <georgiy.shevoroshkin@ost.ch>"
+	smtpEncryption = "tls"
+	smtpServer = "smtp.office365.com"
+	smtpServerPort = 587
+	smtpSslCertPath = "/etc/ssl/certs/ca-certificates.crt"
+	smtpUser = "georgiy.shevoroshkin@ost.ch"
+
+[sendemail "studentenportal"]
+	from = "Georgiy Chirokikh Shevoroshkin <team@studentenportal.ch>"
+	smtpEncryption = "ssl"
+	smtpServer = "asmtp.mail.hostpoint.ch"
+	smtpServerPort = 465
+	smtpSslCertPath = "/etc/ssl/certs/ca-certificates.crt"
+	smtpUser = "team@studentenportal.ch"
+
+[status]
+	branch = true
+	showStash = true
+
+[tag]
+	sort = "-taggerdate"
+
+[url "git@github.com:omega-800/"]
+	insteadOf = "gh:"
+
+[url "git@gitlab.com:omega-800/"]
+	insteadOf = "gl:"
+
+[user]
+	email = "gshevoroshkin@gmail.com"
+	name = "omega-800"
+

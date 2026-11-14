@@ -3,6 +3,7 @@
 ech() { echo "### $1 ###"; }
 ech2() { echo "- $1"; }
 tch() { [ -f "$1" ] || :> "$1"; }
+# TODO: posix mkdir
 mkd() { [ -d "$1" ] || mkdir -p "$1"; }
 ins() { for p in "$@"; do pkg search "$p" > /dev/null || { ech2 "installing $p" && pkg install -y "$p"; }; done }
 # TODO: template vars
@@ -19,20 +20,29 @@ if [ ! -e /etc/localtime ]; then
   adjkerntz -a
 fi
 
-id omega > /dev/null || { ech "USER" && adduser omega -G'wheel video' -d/home/omega -wyes -ssh -q; }
-
 ech "UPDATE"
 pkg update
 sysrc linux_enable="YES"
 service linux start
 
 ech "APPS"
-ins git curl neovim \
-  swaylock flameshot rofi pass \
-  discord \
-  drawio libreoffice xournalpp zathura \
-  qutebrowser firefox chromium \
+ins git curl neovim zsh \
+  swaylock flameshot rofi \
+  pass yazi ripgrep opencode \
+  discord iamb siggy aerc \
+  drawio libreoffice xournalpp \
+  zathura feh mpv \
+  qutebrowser firefox chromium wireshark \
   wshowkeys woomer
+# TODO: calcurse or sth
+
+id omega > /dev/null || { ech "USER" && adduser omega -G'wheel video' -d/home/omega -wyes -szsh -q; }
+# TODO: mk std dirs
+mkd /home/omega/doc/cal/school
+mkd /home/omega/doc/media/img/screenshots
+mkd /home/omega/ws
+mkd /home/omega/dl/iamb
+mkd /home/omega/dl/siggy
 
 ech "DOAS"
 ins doas

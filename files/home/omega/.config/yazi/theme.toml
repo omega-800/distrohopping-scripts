@@ -1,0 +1,396 @@
+[completion.active]
+bg = "#45475a"
+fg = "#cba6f7"
+
+[completion.border]
+fg = "#89b4fa"
+
+[completion.inactive]
+fg = "#cdd6f4"
+
+[[filetype.rules]]
+fg = "#94e2d5"
+mime = "image/*"
+
+[[filetype.rules]]
+fg = "#f9e2af"
+mime = "video/*"
+
+[[filetype.rules]]
+fg = "#f9e2af"
+mime = "audio/*"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/zip"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/gzip"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/tar"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/bzip"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/bzip2"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/7z-compressed"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/rar"
+
+[[filetype.rules]]
+fg = "#cba6f7"
+mime = "application/xz"
+
+[[filetype.rules]]
+fg = "#a6e3a1"
+mime = "application/doc"
+
+[[filetype.rules]]
+fg = "#a6e3a1"
+mime = "application/pdf"
+
+[[filetype.rules]]
+fg = "#a6e3a1"
+mime = "application/rtf"
+
+[[filetype.rules]]
+fg = "#a6e3a1"
+mime = "application/vnd.*"
+
+[[filetype.rules]]
+bold = true
+fg = "#89b4fa"
+url = "*/"
+
+[[filetype.rules]]
+fg = "#cdd6f4"
+mime = "*"
+
+[help.desc]
+fg = "#cdd6f4"
+
+[help.footer]
+fg = "#cdd6f4"
+
+[help.hovered]
+bg = "#45475a"
+fg = "#cdd6f4"
+
+[help.on]
+fg = "#cba6f7"
+
+[help.run]
+fg = "#94e2d5"
+
+[[icon.conds]]
+fg = "#cdd6f4"
+if = "orphan"
+text = ""
+
+[[icon.conds]]
+fg = "#585b70"
+if = "link"
+text = ""
+
+[[icon.conds]]
+fg = "#f9e2af"
+if = "block"
+text = ""
+
+[[icon.conds]]
+fg = "#f9e2af"
+if = "char"
+text = ""
+
+[[icon.conds]]
+fg = "#f9e2af"
+if = "fifo"
+text = ""
+
+[[icon.conds]]
+fg = "#f9e2af"
+if = "sock"
+text = ""
+
+[[icon.conds]]
+fg = "#f9e2af"
+if = "sticky"
+text = ""
+
+[[icon.conds]]
+fg = "#f38ba8"
+if = "dummy"
+text = ""
+
+[[icon.conds]]
+fg = "#89b4fa"
+if = "dir"
+text = ""
+
+[[icon.conds]]
+fg = "#a6e3a1"
+if = "exec"
+text = ""
+
+[[icon.conds]]
+fg = "#cdd6f4"
+if = "!dir"
+text = ""
+
+[[icon.dirs]]
+fg = "#fab387"
+name = ".config"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = ".git"
+text = ""
+
+[[icon.dirs]]
+fg = "#89b4fa"
+name = ".github"
+text = ""
+
+[[icon.dirs]]
+fg = "#89b4fa"
+name = ".npm"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Desktop"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Development"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Documents"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Downloads"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Library"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Movies"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Music"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Pictures"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Public"
+text = ""
+
+[[icon.dirs]]
+fg = "#94e2d5"
+name = "Videos"
+text = ""
+
+[indicator.current]
+bg = "#313244"
+bold = true
+
+[indicator.padding]
+close = ""
+open = "▐"
+
+[indicator.preview]
+bg = "#313244"
+bold = true
+
+[input.border]
+fg = "#89b4fa"
+
+[input.selected]
+bg = "#45475a"
+
+[input.title]
+fg = "#cdd6f4"
+
+[input.value]
+fg = "#cdd6f4"
+
+[mgr]
+syntect_theme = "/nix/store/1wd10m7bnwxmlj75l63lafaxfqfdig82-base16-untitled.tmTheme"
+
+[mgr.border_style]
+fg = "#585b70"
+
+[mgr.count_copied]
+bg = "#a6e3a1"
+fg = "#1e1e2e"
+
+[mgr.count_cut]
+bg = "#f38ba8"
+fg = "#1e1e2e"
+
+[mgr.count_selected]
+bg = "#f9e2af"
+fg = "#1e1e2e"
+
+[mgr.cwd]
+fg = "#94e2d5"
+
+[mgr.find_keyword]
+bold = true
+fg = "#a6e3a1"
+
+[mgr.find_position]
+fg = "#cba6f7"
+
+[mgr.marker_copied]
+bg = "#a6e3a1"
+fg = "#a6e3a1"
+
+[mgr.marker_cut]
+bg = "#f38ba8"
+fg = "#f38ba8"
+
+[mgr.marker_selected]
+bg = "#f9e2af"
+fg = "#f9e2af"
+
+[mode.normal_alt]
+bg = "#1e1e2e"
+fg = "#89b4fa"
+
+[mode.normal_main]
+bg = "#89b4fa"
+bold = true
+fg = "#1e1e2e"
+
+[mode.select_alt]
+bg = "#1e1e2e"
+fg = "#a6e3a1"
+
+[mode.select_main]
+bg = "#a6e3a1"
+bold = true
+fg = "#1e1e2e"
+
+[mode.unset_alt]
+bg = "#1e1e2e"
+fg = "#f2cdcd"
+
+[mode.unset_main]
+bg = "#f2cdcd"
+bold = true
+fg = "#1e1e2e"
+
+[pick.active]
+fg = "#cba6f7"
+
+[pick.border]
+fg = "#89b4fa"
+
+[pick.inactive]
+fg = "#cdd6f4"
+
+[status.perm_exec]
+fg = "#a6e3a1"
+
+[status.perm_read]
+fg = "#f9e2af"
+
+[status.perm_sep]
+fg = "#94e2d5"
+
+[status.perm_type]
+fg = "#89b4fa"
+
+[status.perm_write]
+fg = "#f38ba8"
+
+[status.progress_error]
+bg = "#1e1e2e"
+fg = "#f38ba8"
+
+[status.progress_label]
+bg = "#1e1e2e"
+fg = "#cdd6f4"
+
+[status.progress_normal]
+bg = "#1e1e2e"
+fg = "#cdd6f4"
+
+[status.sep_left]
+close = ""
+open = ""
+
+[status.sep_right]
+close = ""
+open = ""
+
+[tabs.active]
+bg = "#89b4fa"
+bold = true
+fg = "#1e1e2e"
+
+[tabs.inactive]
+bg = "#181825"
+fg = "#89b4fa"
+
+[tabs.sep_inner]
+close = ""
+open = ""
+
+[tabs.sep_outer]
+close = ""
+open = ""
+
+[tasks.border]
+fg = "#89b4fa"
+
+[tasks.hovered]
+bg = "#45475a"
+fg = "#cdd6f4"
+
+[tasks.title]
+fg = "#cdd6f4"
+
+[which.cand]
+fg = "#94e2d5"
+
+[which.desc]
+fg = "#cdd6f4"
+
+[which.mask]
+bg = "#313244"
+
+[which.rest]
+fg = "#f2cdcd"
+
+[which.separator_style]
+fg = "#585b70"

@@ -1,0 +1,28 @@
+[log]
+enabled = false
+
+[mgr]
+scrolloff = 8
+show_hidden = true
+show_symlink = true
+sort_dir_first = true
+sort_reverse = true
+
+[[opener.edit]]
+block = true
+for = "unix"
+run = "nvim %s1"
+
+[[opener.open]]
+desc = "Open"
+run = "xdg-open %s1"
+
+[[opener.play]]
+for = "unix"
+orphan = true
+run = "mpv %s1"
+
+[preview]
+image_quality = 50
+tab_size = 2
+wrap = "no"

@@ -1,0 +1,15 @@
+[calendars]
+[[school]]
+path = /home/omega/doc/cal/school/
+priority=10
+type=calendar
+
+[locale]
+dateformat=%d.%m.%Y
+datetimeformat=%H:%M:%S %a %d %b %Y
+firstweekday=0
+longdateformat=%d.%m.%y
+longdatetimeformat=%H:%M:%S %d.%m.%y
+timeformat=%H:%M:%S
+unicode_symbols=true
+weeknumbers=left

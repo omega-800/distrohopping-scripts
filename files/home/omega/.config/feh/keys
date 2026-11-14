@@ -1,0 +1,14 @@
+next_img n Right space J
+prev_img p Left BackSpace J
+reload_minus comma
+reload_plus period
+save_image S
+scroll_down j
+scroll_left h
+scroll_right l
+scroll_up k
+toggle_keep_vp v
+toggle_pause b
+zoom_fit s
+zoom_in Up KP_Add plus
+zoom_out Down KP_Subtract minus

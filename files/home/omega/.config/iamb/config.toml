@@ -1,0 +1,39 @@
+default_profile = "personal"
+
+[dirs]
+downloads = "/home/omega/dl/iamb"
+
+[profiles.personal]
+user_id = "@omega-800:matrix.org"
+
+[profiles.school]
+user_id = "@omega:open-ost.ch"
+
+[settings]
+open_command = ["xdg-open"]
+
+[settings.aliases]
+c = "chats"
+d = "download"
+e = "edit"
+m = "rooms"
+o = "open"
+r = "reply"
+u = "upload"
+
+[settings.image_preview.protocol]
+type = "kitty"
+
+[settings.image_preview.protocol.size]
+height = 10
+width = 66
+
+[settings.layout]
+style = "new"
+
+[settings.macros."normal|visual"]
+V = "<C-W>m"
+
+[settings.notifications]
+enabled = true
+via = "desktop|bell"

@@ -1,0 +1,5 @@
+load_dotenv = true
+strict_env = true
+
+[whitelist]
+prefix = ["/home/omega/ws/school", "/home/omega/ws/pers", "/home/omega/ws/code"]

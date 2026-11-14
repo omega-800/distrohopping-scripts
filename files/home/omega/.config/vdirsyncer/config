@@ -1,0 +1,16 @@
+[general]
+status_path = "/home/omega/.local/share/vdirsyncer/status"
+
+[pair calendar_school]
+a = "calendar_school_remote"
+b = "calendar_school_local"
+collections = null
+
+[storage calendar_school_local]
+fileext = ".ics"
+path = "/home/omega/doc/cal/school"
+type = "filesystem"
+
+[storage calendar_school_remote]
+type = "http"
+url = "https://unterricht.ost.ch/icalv1/Calendar/66a6d2f6-dcc9-4928-8982-c51ff7200b61#"
